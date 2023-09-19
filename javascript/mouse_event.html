@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function (){
+            btn.onclick = function(event){
+                //console.log(event.button);//0출력 
+                console.log("Mouse Click"); 
+            }
+            btn.oncontextmenu = function(event){
+                console.log(event.button); //우클릭할때 이벤트 2출력
+            }
+            btn.onmousedown = function(event){
+                console.log("Mouse Down");
+            }
+            btn.onmouseup = function(event){
+                console.log("Mouse Up");
+            }
+            div.onclick = function(event){
+                if(event.altKey){
+                    console.log("Enter Alt key");
+                }else if(event.shiftKey){
+                    console.log("Enter Shift key");
+                }else if(event.ctrlKey){
+                    console.log("Enter Ctrl key");
+                }
+                
+            }
+            div.ondblclick = function(event){
+                console.log("double click");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">click</button>
+    <div id="div"></div>
+</body>
+</html>
